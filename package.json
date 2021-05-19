@@ -1,0 +1,45 @@
+{
+  "name": "nodejs-test",
+  "version": "1.0.0",
+  "description": "My Moleculer-based microservices project",
+  "scripts": {
+    "dev": "moleculer-runner --repl --hot services/**/*.service.js",
+    "start": "moleculer-runner",
+    "cli": "moleculer connect ",
+    "ci": "jest --watch",
+    "test": "jest --coverage"
+  },
+  "keywords": [
+    "microservices",
+    "moleculer"
+  ],
+  "author": "",
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "jest-cli": "^26.6.3",
+    "moleculer-repl": "^0.6.4",
+    "supertest": "^6.1.3"
+  },
+  "dependencies": {
+    "moleculer": "^0.14.13",
+    "moleculer-db": "^0.8.13",
+    "moleculer-db-adapter-sequelize": "^0.2.10",
+    "moleculer-web": "^0.9.1",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.6.2",
+    "dotenv": "^9.0.2"
+  },
+  "engines": {
+    "node": ">= 10.x.x"
+  },
+  "jest": {
+    "testTimeout": 10000,
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "rootDir": "./services",
+    "roots": [
+      "../test"
+    ]
+  }
+}

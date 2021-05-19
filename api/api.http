@@ -1,0 +1,33 @@
+POST http://localhost:3000/v1/ride
+Authorization: Basic 66666666-6666-4400-8000-00000000000f 123456
+Content-Type: application/json
+
+{
+	"vehicleId": "11111111-1111-4100-8000-000000000001",
+	"city": "new york",
+	"promoCode": "0_explain_theory_something"
+}
+
+###===
+PUT http://localhost:3000/v1/ride
+Authorization: Basic 66666666-6666-4400-8000-00000000000f 123456
+Content-Type: application/json
+
+{
+	"riderId": "c6140f1b-ab5f-4d25-b358-6a4708cd51e6",
+	"endAddress": "new york",
+	"status": "finished"
+}
+
+### при создании поездки
+### 1. проверка на истечение
+### 2. проверка на наличие в его городе, записи user_promo_codes
+### 2.1. если нет, создать запись
+### 2.2. если да, то ничего.
+
+### закончили поездку
+### 1. если status != finished, то ничего не делаем
+### 2. ищем промокод пользователя с его городом.
+### 2.1. если usage_count > 0, то ничего не делаем
+### 2.2. иначе, применяем его по правилам
+
